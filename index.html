@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/expert-list.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>Экспертная система</h1>
+                <p class="lead">Поддержка принятия решений</p>
+            </div>
+            <div id="list-creation">
+                <h1>Создание оценочного листа</h1>
+                <div style="margin-top: 20px">
+                    <h3>Выберите файл, если хотите загрузить готовый</h3>
+                </div>
+                <div style="margin-top: 20px">
+                    <label for="#get_the_file">Выберите файл</label>
+                    <input class="form-control" type="file" id="get_the_file">
+                </div>
+                <div style="margin-top: 20px">
+                    <button class="btn btn-secondary" onclick="openFile()">Открыть</button>
+                </div>
+                <div style="margin-top: 20px">
+                    <h3>Для добавления признака введите название и количество градаций</h3>
+                </div>
+                <div>
+                    <label for="#feature-name">Название</label>
+                    <input class="form-control" id="feature-name" type="text">
+                </div>
+                <div style="margin-top: 20px">
+                    <label for="#levels-count">Количество уровней</label>
+                    <input class="form-control" id="levels-count" type="text">
+                </div>
+                <div style="margin-top: 20px">
+                    <label for="#feature-weight">Вес</label>
+                    <input class="form-control" id="feature-weight" type="text">
+                </div>
+                <div style="margin-top: 20px">
+                    <label for="#feature-type">Тип(положительный/отрицательный)</label>
+                    <select class="form-control" id="feature-type">
+                        <option value="true">положительный</option>
+                        <option value="false">отрицательный</option>
+                    </select>
+                </div>
+                <button  class="btn btn-primary" onclick="addInputsForLevels()" style="margin-top: 20px">Добавить признак</button>
+                <div style="margin-top: 20px" id="level-inputs">
+                
+                </div>
+                <div style="margin-top: 20px">
+                    <button class="btn btn-success" onclick="createList()" style="margin-top: 20px">Готово</button>
+                </div>
+            </div>
+            <div>
+                <h1>Оценочный лист</h1>
+
+                <div id="list-using" style="display: none">
+                
+                </div>
+                <div id="list-controlls" style="display: none">
+                    <div style="margin-top: 20px">
+                        <button class="btn btn-success" onclick="calculateResult()">Посчитать</button>
+                    </div>
+                    <div style="margin-top: 20px">
+                        <button class="btn btn-success" class="btn btn-secondary" onclick="download()">Скачать</button>
+                    </div>
+                    <div style="margin-top: 20px">
+                        <button class="btn btn-warning" onclick="goEdit()">Редактировать</button>
+                    </div>
+                    <p>Выберите оценки</p>
+                </div>
+
+            </div>              
+        </div>
+    </body>
+</html>
