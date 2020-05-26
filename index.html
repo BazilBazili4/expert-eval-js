@@ -5,6 +5,10 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/expert-list.js"></script>
+        <script type="text/javascript" src="js/stateStorage.js"></script>
+        <script type="text/javascript" src="js/criterionInputs.js"></script>
+        <script type="text/javascript" src="js/test.js"></script>
+
         <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 
     </head>
@@ -34,10 +38,6 @@
                     <input class="form-control" id="feature-name" type="text">
                 </div>
                 <div style="margin-top: 20px">
-                    <label for="#levels-count">Количество уровней</label>
-                    <input class="form-control" id="levels-count" type="text">
-                </div>
-                <div style="margin-top: 20px">
                     <label for="#feature-weight">Вес</label>
                     <input class="form-control" id="feature-weight" type="text">
                 </div>
@@ -47,6 +47,20 @@
                         <option value="true">положительный</option>
                         <option value="false">отрицательный</option>
                     </select>
+                </div>
+                <div style="margin-top: 20px">
+                    <label for="#feature-type">Тип(качественный/количественный)</label>
+                    <select class="form-control" onchange="showFeatureLevelCount()" id="feature-class">
+                        <option value="1">качественный</option>
+                        <option value="2">количественный</option>
+                    </select>
+                </div>
+                <div id="levels-count-block" style="margin-top: 20px;">
+                    <label for="#levels-count">Количество уровней</label>
+                    <input class="form-control" id="levels-count" onchange="addInputsForLevels()" type="text">
+                </div>
+                <div id="level-inputs">
+
                 </div>
                 <button  class="btn btn-primary" onclick="addInputsForLevels()" style="margin-top: 20px">Добавить признак</button>
                 <div style="margin-top: 20px" id="level-inputs">
