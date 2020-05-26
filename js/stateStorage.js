@@ -1,6 +1,6 @@
 const criteriaKey = 'criteria';
 const currentStateKey = 'currentState';
-
+const alternativesKey = 'alternatives';
 const setCurrentState = (currentState) => {
     localStorage.setItem(currentStateKey, currentState);
 }
@@ -31,4 +31,28 @@ const updateCriteria = (criterion) => {
 
 const dropCriteria = () => {
     localStorage.removeItem(criteriaKey);
+}
+
+const setAlternatives = (alternatives) => {
+    localStorage.setItem(alternativesKey, JSON.stringify(alternatives));
+}
+
+const getAlternatives = () => {
+    let items = localStorage.getItem(alternativesKey);
+    if (items) {
+        return JSON.parse(localStorage.getItem(alternativesKey));
+    } else {
+        return [];
+    }
+}
+
+// const updateAlternatives = (alternatives) => {
+//     let criteria = getCriteria();
+    
+//     criteria.push(criterion);
+//     setCriteria(criteria);
+// }
+
+const dropAlternatives = () => {
+    localStorage.removeItem(alternativesKey);
 }

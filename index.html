@@ -4,10 +4,7 @@
         <meta charset="UTF-8">
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/stateStorage.js"></script>
-        <script type="text/javascript" src="js/criterionInputs.js"></script>
-        <script type="text/javascript" src="js/features.js"></script>
-        <script type="text/javascript" src="js/list-controller.js"></script>
+        
 
         <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 
@@ -66,6 +63,14 @@
                 <!-- <div style="margin-top: 20px" id="level-inputs">
                 
                 </div> -->
+                <div id="levels-count-block" style="margin-top: 20px;">
+                    <label for="#alternatives-count">Количество альтернатив</label>
+                    <input class="form-control" id="alternatives-count" onchange="addInputsForAlternatives()" type="text">
+                </div>
+                <div id="alternatives-inputs">
+
+                </div>
+                <button  class="btn btn-primary" onclick="addAlternatives()" style="margin-top: 20px">Добавить альтернативы</button>
                 <div style="margin-top: 20px">
                     <button class="btn btn-success" onclick="createList()" style="margin-top: 20px">Готово</button>
                     <button class="btn btn-warning" onclick="resetList()" style="margin-top: 20px">Сбросить признаки</button>
@@ -75,7 +80,7 @@
             <div>
                 <h1>Оценочный лист</h1>
 
-                <div id="list-using" style="display: none">
+                <div id="list-using" style="display: block">
                 
                 </div>
                 <div id="list-controlls" style="display: none">
@@ -93,5 +98,14 @@
 
             </div>              
         </div>
+
+        <script type="text/javascript" src="js/stateStorage.js"></script>
+        <script type="text/javascript" src="js/criterionInputs.js"></script>
+        <script type="text/javascript" src="js/features.js"></script>
+        <script type="text/javascript" src="js/table-generator.js"></script>
+        <script type="text/javascript" src="js/list-controller.js"></script>
+        <script type="text/javascript" src="js/alternatives.js"></script>
+
     </body>
+    
 </html>
