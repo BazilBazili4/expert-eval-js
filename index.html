@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/expert-list.js"></script>
         <script type="text/javascript" src="js/stateStorage.js"></script>
         <script type="text/javascript" src="js/criterionInputs.js"></script>
-        <script type="text/javascript" src="js/test.js"></script>
+        <script type="text/javascript" src="js/features.js"></script>
+        <script type="text/javascript" src="js/list-controller.js"></script>
 
         <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 
@@ -62,12 +62,14 @@
                 <div id="level-inputs">
 
                 </div>
-                <button  class="btn btn-primary" onclick="addInputsForLevels()" style="margin-top: 20px">Добавить признак</button>
-                <div style="margin-top: 20px" id="level-inputs">
+                <button  class="btn btn-primary" onclick="addFeature()" style="margin-top: 20px">Добавить признак</button>
+                <!-- <div style="margin-top: 20px" id="level-inputs">
                 
-                </div>
+                </div> -->
                 <div style="margin-top: 20px">
                     <button class="btn btn-success" onclick="createList()" style="margin-top: 20px">Готово</button>
+                    <button class="btn btn-warning" onclick="resetList()" style="margin-top: 20px">Сбросить признаки</button>
+
                 </div>
             </div>
             <div>

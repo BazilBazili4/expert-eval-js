@@ -14,5 +14,21 @@ const setCriteria = (criteria) => {
 }
 
 const getCriteria = () => {
-    return JSON.parse(localStorage.getItem(criteriaKey));
+    let items = localStorage.getItem(criteriaKey);
+    if (items) {
+        return JSON.parse(localStorage.getItem(criteriaKey));
+    } else {
+        return [];
+    }
+}
+
+const updateCriteria = (criterion) => {
+    let criteria = getCriteria();
+    
+    criteria.push(criterion);
+    setCriteria(criteria);
+}
+
+const dropCriteria = () => {
+    localStorage.removeItem(criteriaKey);
 }
