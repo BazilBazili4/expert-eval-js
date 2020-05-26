@@ -9,12 +9,19 @@ const addFeature = () => {
         featureData.levelsCount,
         featureData.levels
     );
-    console.log(feature);
     updateCriteria(feature);
-    console.log(getCriteria());
 }
 
 const resetList = () => {
     dropCriteria();
 }
 
+const addAlternatives = () => {
+    let alternaives = getAlternativesNames()
+    setAlternatives(alternaives);
+    console.log(getAlternatives());
+}
+
+const resetAlternatives = () => {
+    dropAlternatives();
+}
