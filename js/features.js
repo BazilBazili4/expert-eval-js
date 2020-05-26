@@ -23,17 +23,29 @@ const createFeature = (featureId, featureName, featureWeight, featureType, featu
     return feature;
 }
 
+const getFeaturesNames = (features) => {
+    let names = [];
+    for (let feature of features) {
+        names.push(feature.name);
+    }
+    return names;
+}
+
 const setFeatureLevel = (feature, levelName) => {
     feature.levels.push(levelName);
     return feature;
 }
 
 const setLevels = (levelsNames) => {
-    let levels = {};
-    let baseValue = 1;
+    let levels = [];
+    let baseValue = -1;
     levelsNames.forEach(
         levelName => {
-            levels[levelName] = baseValue += 2;
+            let level = {
+                name: levelName,
+                value: baseValue += 2
+            };
+            levels.push(level);
         }
     );
 
