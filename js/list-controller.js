@@ -49,8 +49,12 @@ const calculateResult = () => {
     let expertsCount = document.getElementById('experts-count').value;
     let weights = getWeightValues(expertsCount);
     let alternaivesValues = getAlternativesValues(alternatives, expertsCount);
-    console.log(getAlternativesValues(alternatives, expertsCount));
-    console.log(getWeightValues(expertsCount));
     console.log(meanValuesMethod(alternaivesValues, weights, expertsCount));
+    console.log(meanAverageValuesMethod(alternaivesValues, weights, expertsCount));
+    console.log(topsisMethod(alternaivesValues, weights, expertsCount));
+
+
+
+
 
 }
