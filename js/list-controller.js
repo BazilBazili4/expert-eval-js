@@ -25,3 +25,20 @@ const addAlternatives = () => {
 const resetAlternatives = () => {
     dropAlternatives();
 }
+
+const createList = () => {
+    let expertsCount = document.getElementById('experts-count').value;
+    let listContainer = document.getElementById('list-using');
+    let features = getCriteria();
+    let alternaives = getAlternatives();
+    let featureNames = getFeaturesNames(features);
+
+    console.log(features);
+    for (let index = 1; index <= expertsCount; index++) {
+        let header = document.createElement("h3");
+        header.innerHTML = "Эксперт №" + index;
+        listContainer.appendChild(header);
+        listContainer.appendChild(generateFeaturesTable(featureNames, features, alternaives));
+    }
+
+}
