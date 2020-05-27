@@ -37,8 +37,20 @@ const createList = () => {
     for (let index = 1; index <= expertsCount; index++) {
         let header = document.createElement("h3");
         header.innerHTML = "Эксперт №" + index;
+        header.setAttribute("style", "margin-top: 10px;");
         listContainer.appendChild(header);
-        listContainer.appendChild(generateFeaturesTable(featureNames, features, alternaives));
+        listContainer.appendChild(generateFeaturesTable(featureNames, features, alternaives, index));
     }
+
+}
+
+const calculateResult = () => {
+    let alternatives = getAlternatives();
+    let expertsCount = document.getElementById('experts-count').value;
+
+    for (let alter of alternatives) {
+        console.log(getAlternativeValues(alter, expertsCount));
+    }
+    console.log(getWeightValues(expertsCount));
 
 }

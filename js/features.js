@@ -26,7 +26,13 @@ const createFeature = (featureId, featureName, featureWeight, featureType, featu
 const getFeaturesNames = (features) => {
     let names = [];
     for (let feature of features) {
-        names.push(feature.name);
+
+        names.push(
+            {
+                id: feature.id,
+                name: feature.name
+            }
+        );
     }
     return names;
 }
@@ -63,5 +69,4 @@ const isQuantitative = (feature) => {
         return false;
     }
 }
-
 

@@ -60,6 +60,8 @@
 
                 </div>
                 <button  class="btn btn-primary" onclick="addFeature()" style="margin-top: 20px">Добавить признак</button>
+                <button class="btn btn-warning" onclick="resetList()" style="margin-top: 20px">Сбросить признаки</button>
+
                 <!-- <div style="margin-top: 20px" id="level-inputs">
                 
                 </div> -->
@@ -71,14 +73,14 @@
 
                 </div>
                 <button  class="btn btn-primary" onclick="addAlternatives()" style="margin-top: 20px">Добавить альтернативы</button>
+                <button class="btn btn-warning" onclick="resetAlternatives()" style="margin-top: 20px">Сбросить альтернативы</button>
+
                 <div id="levels-count-block" style="margin-top: 20px;">
                     <label for="#experts-count">Количество экспертов</label>
                     <input class="form-control" id="experts-count" type="text">
                 </div>
-                <div style="margin-top: 10px">
+                <div style="margin-top: 1px">
                     <button class="btn btn-success" onclick="createList()" style="margin-top: 20px">Готово</button>
-                    <button class="btn btn-warning" onclick="resetList()" style="margin-top: 20px">Сбросить признаки</button>
-
                 </div>
             </div>
             <div style="margin-top: 30px">
@@ -87,7 +89,7 @@
                 <div id="list-using" style="display: block">
                 
                 </div>
-                <div id="list-controlls" style="display: none">
+                <div id="list-controlls" style="display: block">
                     <div style="margin-top: 20px">
                         <button class="btn btn-success" onclick="calculateResult()">Посчитать</button>
                     </div>
