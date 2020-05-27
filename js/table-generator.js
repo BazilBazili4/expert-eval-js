@@ -116,6 +116,19 @@ const getAlternativeValues = (alternative, expertCount) => {
     return result;
 }
 
+const getAlternativesValues = (alternatives, expertsCount) => {
+    let result = [];
+    for (let alter of alternatives) {
+        result.push(
+            {
+                name: alter,
+                values: getAlternativeValues(alter, expertsCount)
+            }
+        );
+    }
+    return result;
+}
+
 const getWeightValuesByExpert = (expertId) => {
     let inputClass = generateWeightInputClass(expertId);
     let values = document.getElementsByClassName(inputClass);

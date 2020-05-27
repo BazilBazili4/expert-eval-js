@@ -9,7 +9,7 @@ const createFeature = (featureId, featureName, featureWeight, featureType, featu
         levelUnit: 0,
         levelValue: 0,
         levelsCount: Number(levelCount),
-        levels: setLevels(levelNames),
+        levels: setLevels(levelNames, featureType),
         value: 0,
         // setFeatureRank(normalizingCoef) {
         //     this.featureRank = normalizingCoef * this.weight;
@@ -42,14 +42,21 @@ const setFeatureLevel = (feature, levelName) => {
     return feature;
 }
 
-const setLevels = (levelsNames) => {
+const setLevels = (levelsNames, featureType) => {
     let levels = [];
-    let baseValue = -1;
+    let levelPosValues = [9, 7, 5, 3, 1];
+    let levelNegValues = [1, 3, 5, 7, 9];
+    let values = [];
+    if (featureType) {
+        values = levelPosValues;
+    } else {
+        values = levelNegValues;
+    }
     levelsNames.forEach(
-        levelName => {
+        (levelName, index) => {
             let level = {
                 name: levelName,
-                value: baseValue += 2
+                value: values[index]
             };
             levels.push(level);
         }

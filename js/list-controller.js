@@ -47,10 +47,10 @@ const createList = () => {
 const calculateResult = () => {
     let alternatives = getAlternatives();
     let expertsCount = document.getElementById('experts-count').value;
-
-    for (let alter of alternatives) {
-        console.log(getAlternativeValues(alter, expertsCount));
-    }
+    let weights = getWeightValues(expertsCount);
+    let alternaivesValues = getAlternativesValues(alternatives, expertsCount);
+    console.log(getAlternativesValues(alternatives, expertsCount));
     console.log(getWeightValues(expertsCount));
+    console.log(meanValuesMethod(alternaivesValues, weights, expertsCount));
 
 }
