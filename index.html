@@ -17,7 +17,7 @@
             </div>
             <div id="list-creation">
                 <h1>Создание оценочного листа</h1>
-                <div style="margin-top: 20px">
+                <!-- <div style="margin-top: 20px">
                     <h3>Выберите файл, если хотите загрузить готовый</h3>
                 </div>
                 <div style="margin-top: 20px">
@@ -26,7 +26,7 @@
                 </div>
                 <div style="margin-top: 20px">
                     <button class="btn btn-secondary" onclick="openFile()">Открыть</button>
-                </div>
+                </div> -->
                 <div style="margin-top: 20px">
                     <h3>Для добавления признака введите название и количество градаций</h3>
                 </div>
@@ -93,13 +93,16 @@
                     <div style="margin-top: 20px">
                         <button class="btn btn-success" onclick="calculateResult()">Посчитать</button>
                     </div>
-                    <div style="margin-top: 20px">
+                    <!-- <div style="margin-top: 20px">
                         <button class="btn btn-success" class="btn btn-secondary" onclick="download()">Скачать</button>
                     </div>
                     <div style="margin-top: 20px">
                         <button class="btn btn-warning" onclick="goEdit()">Редактировать</button>
                     </div>
-                    <p>Выберите оценки</p>
+                    <p>Выберите оценки</p> -->
+                </div>
+                <div style="margin-top: 30px" id="list-result" style="display: block">
+
                 </div>
 
             </div>              
@@ -111,6 +114,7 @@
         <script type="text/javascript" src="js/table-generator.js"></script>
         <script type="text/javascript" src="js/alternatives.js"></script>
         <script type="text/javascript" src="js/calculation.js"></script>
+        <script type="text/javascript" src="js/result-view.js"></script>
         <script type="text/javascript" src="js/list-controller.js"></script>
 
 

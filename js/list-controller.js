@@ -49,12 +49,28 @@ const calculateResult = () => {
     let expertsCount = document.getElementById('experts-count').value;
     let weights = getWeightValues(expertsCount);
     let alternaivesValues = getAlternativesValues(alternatives, expertsCount);
-    console.log(meanValuesMethod(alternaivesValues, weights, expertsCount));
-    console.log(meanAverageValuesMethod(alternaivesValues, weights, expertsCount));
-    console.log(topsisMethod(alternaivesValues, weights, expertsCount));
+    let meanValues = meanValuesMethod(alternaivesValues, weights, expertsCount);
+    let meanAvgValues = meanAverageValuesMethod(alternaivesValues, weights, expertsCount);
+    let topsis = topsisMethod(alternaivesValues, weights, expertsCount);
+    console.log(meanValues);
+    console.log(meanAvgValues);
+    console.log(topsis);
+    let listContainer = document.getElementById('list-result');
+    listContainer.innerHTML = '';
 
-
-
-
-
+    let header = document.createElement("h3");
+    header.innerHTML = "Усреднение индивидуальных оценок";
+    header.setAttribute("style", "margin-top: 10px;");
+    listContainer.appendChild(header);
+    listContainer.appendChild(generateResultFeaturesTable(meanValues));
+    let header1 = document.createElement("h3");
+    header1.innerHTML = "Аддитивная свёртка индивидуальных ценностей";
+    header1.setAttribute("style", "margin-top: 10px;");
+    listContainer.appendChild(header1);
+    listContainer.appendChild(generateResultFeaturesTable(meanAvgValues));
+    let header2 = document.createElement("h3");
+    header2.innerHTML = "Метод ТОПСИС";
+    header2.setAttribute("style", "margin-top: 10px;");
+    listContainer.appendChild(header2);
+    listContainer.appendChild(generateTopsisTable(topsis));
 }
