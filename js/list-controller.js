@@ -10,10 +10,17 @@ const addFeature = () => {
         featureData.levels
     );
     updateCriteria(feature);
+    let listContainer = document.getElementById('feature-list');
+    listContainer.innerHTML = '';
+    listContainer.appendChild(generateFeatureTable(getCriteria()));
+
+
 }
 
 const resetList = () => {
     dropCriteria();
+    let listContainer = document.getElementById('feature-list');
+    listContainer.innerHTML = '';
 }
 
 const addAlternatives = () => {
